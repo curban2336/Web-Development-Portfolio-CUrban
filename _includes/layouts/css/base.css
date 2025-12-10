@@ -1,11 +1,73 @@
 :root {
 	--font-family: system-ui, sans-serif;
-
-	--background-color: #fff;
-	--text-color: #333;
+		/* Colors */
+	--background-color: hsl(25, 40%, 35%);
+	--text-color:  hsl(25, 35%, 15%);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
 	--text-color-link-visited: #17050F;
+
+	/* ===== BASE PALETTE ===== */
+  /* Cookie-themed brand colors */
+  --color-golden: hsl(40, 65%, 55%);
+  --color-caramel: hsl(30, 60%, 38%);
+  --color-vanilla: hsl(45, 30%, 96%);
+  --color-cream: hsl(35, 30%, 95%);
+  --color-tan: hsl(30, 25%, 90%);
+  --color-accent: hsl(15, 75%, 42%);
+
+  /* ===== TEXT COLORS ===== */
+  /* WCAG AA compliant for light backgrounds */
+  --color-text-body: hsl(25, 30%, 25%);
+  --color-text-dark: hsl(25, 30%, 20%);
+  --color-text-medium: hsl(25, 20%, 45%);
+  --color-text-light: hsl(45, 30%, 98%);
+
+  /* ===== SHADOW COLORS ===== */
+  --shadow-color-soft: hsl(25, 20%, 80%);
+  /* Light shadow for cards */
+  --shadow-color-medium: hsl(25, 20%, 70%);
+  /* Deeper shadow for hero card */
+
+  /* ===== BADGE COLORS ===== */
+  /* No-bake badge (green) */
+  --badge-no-bake-bg: hsl(120, 40%, 85%);
+  --badge-no-bake-text: hsl(120, 40%, 25%);
+
+  /* Decorated badge (purple) */
+  --badge-decorated-bg: hsl(280, 50%, 90%);
+  --badge-decorated-text: hsl(280, 50%, 30%);
+
+  /* Filling badge (pink/red) */
+  --badge-filling-bg: hsl(340, 50%, 90%);
+  --badge-filling-text: hsl(340, 50%, 30%);
+
+  /* ===== COMPONENT BACKGROUNDS ===== */
+  --bg-video-placeholder: hsl(40, 65%, 92%);
+
+  /* ===== SPACING SCALE ===== */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+
+  /* ===== ASPECT RATIOS ===== */
+  --aspect-wide: 16 / 9;
+  --aspect-square: 1 / 1;
+  --aspect-portrait: 3 / 4;
+
+  /* ===== CARD SIZE LIMITS ===== */
+  --card-width-min: 20rem;
+  --card-width-half: 50rem;
+  --card-width-max: 1fr;
+  --card-width-inner: 16rem;
+
+  /* ===== DESIGN TOKENS ===== */
+  /* Radii and shadows */
+  --radius-card: 1rem;
+  --shadow-soft: 0 0.25rem 0.75rem var(--shadow-color-soft);
 }
 
 /* Global stylesheet */
