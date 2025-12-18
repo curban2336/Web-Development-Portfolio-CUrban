@@ -722,3 +722,9 @@ export default class MainScene extends Phaser.Scene {
   }
 }
 ```
+
+## Main Scene JS
+
+This JS shows the JavaScript used to create the walls, make the players and create the boss, keep score, set the controls, and increment the game speed/difficulty.
+
+{% ImageGet "ShooterGameplay", "Screenshot of the Sci-Fi-Shooter Gameplay", 400 %}
