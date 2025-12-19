@@ -122,8 +122,10 @@ export default async function(eleventyConfig) {
 
 	// HAP pose shortcode for Cloudinary images
 eleventyConfig.addShortcode("ImageGet", (imgName, altText, width = 150) => {
-    const url = cloudinary.getPortUrl(imgName, width);
-    return `<img src="${url}" alt="${altText}" width="${width}" height="${width}" loading="lazy" decoding="async">`;
+    const urlSmall = cloudinary.getPortUrl(imgName, width);
+		const urlMedium = cloudinary.getPortUrl(imgName, 800);
+		const urlLarge = cloudinary.getPortUrl(imgName, 1600);
+    return `<img srcset="${urlSmall} 400w, ${urlMedium} 800w, ${urlLarge} 1600w" alt="${altText}" width="${width}" height="${width}" loading="lazy" decoding="async">`;
 });
 
 	// Features to make your build faster (when you need them)

@@ -723,8 +723,12 @@ export default class MainScene extends Phaser.Scene {
 }
 ```
 
-## Main Scene JS
+## Gameplay Breakdown
 
-This JS shows the JavaScript used to create the walls, make the players and create the boss, keep score, set the controls, and increment the game speed/difficulty.
+When the game boots up, players use the up and down arrow to move their ship on the screen. Sprite animation plays constantly on the ship while the background parallaxes to convey constant movement. The spacebar allows the player to shoot. This you already know, however: The projectile for the ship item pools. This means that the player can only fire when the current projectile either reaches the end of the screen or hits one of the moving walls.
 
 {% ImageGet "ShooterGameplay", "Screenshot of the Sci-Fi-Shooter Gameplay", 400 %}
+
+Every five walls that pass, a boss fight initiates. The boss shoots at the player and randomly moved up and down on the screen to attempt to avoid the player's attacks. When a boss is defeated, it resets the boss and increases it's health. After that, the next wave of five walls get progressively faster. This is all displayed and commented in the code block above.
+
+{% ImageGet "BossFight", "Screenshot of the Sci-Fi-Shooter Boss Fight", 400 %}
