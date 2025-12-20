@@ -15,10 +15,25 @@
   font-display: swap;
 }
 
+/* Font variables */
 :root {
 	--font-family-title: 'Playfair', -apple-system, sans-serif;
 	--font-family: 'Lora', -apple-system, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+
+	--font-sm: 0.875rem; /* 14px /16 */
+	--font-md: 1rem; /* 16px /16 */
+	--font-lg: 1.125rem; /* 18px /16 */
+	--font-xl: 1.5rem; /* 24px /16 */
+	--font-xxl: 2rem; /* 32px /16 */
+	--font-xxxl: 3rem; /* 48px /16 */
+}
+
+/* Img variables */
+:root {
+	--img-small: 4rem;
+	--img-medium: 30rem;
+	--img-large: 60rem;
 }
 
 /* Theme colors */
@@ -59,6 +74,8 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 	width: 100%;
+	display: grid;
+	text-align: center;
 }
 html {
 	overflow-y: scroll;
@@ -75,7 +92,7 @@ html {
 	width: 1px;
 }
 
-/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+/* Image Styling */
 img{
   max-width: 100%;
 }
@@ -87,6 +104,8 @@ img[src$=".svg"] {
   height: auto;
   max-width: none;
 }
+
+/*video and iframe styling*/
 video,
 iframe {
 	width: 100%;
@@ -96,19 +115,23 @@ iframe {
 	aspect-ratio: 16/9;
 }
 
+/*List styling*/
 p:last-child {
 	margin-bottom: 0;
 }
 p {
 	line-height: 1.5;
+	font-size: var(--font-sm);
 }
 
 li {
 	line-height: 1.5;
 }
 
+/* Links */
 a[href] {
 	color: var(--text-color-link);
+	font-size: var(--font-md);
 }
 a[href]:visited {
 	color: var(--text-color-link-visited);
@@ -118,12 +141,18 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+/* Layout */
 main,
 footer {
 	padding: 1rem;
 }
 main :first-child {
 	margin-top: 0;
+}
+
+main{
+	container-type: inline-size;
+  container-name: blogBody;
 }
 
 header {
@@ -139,6 +168,15 @@ header, h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family-title);
 }
 
+h1{
+	font-size: var(--font-xl);
+}
+
+h2{
+	font-size: var(--font-lg);
+}
+
+/* Skip link */
 #skip-link {
 	text-decoration: none;
 	background: var(--background-color);
@@ -157,6 +195,7 @@ header, h1, h2, h3, h4, h5, h6 {
 	z-index: 999;
 }
 
+/* Next/Previous links */
 .links-nextprev {
 	display: flex;
 	justify-content: space-between;
@@ -172,6 +211,7 @@ header, h1, h2, h3, h4, h5, h6 {
 	text-align: right;
 }
 
+/* Tables and code blocks */
 table {
 	margin: 1em 0;
 }
@@ -185,7 +225,8 @@ code {
 	font-family: var(--font-family-monospace);
 	overflow: auto;
 	max-height: 40rem;
-	white-space: pre-wrap;
+	max-width: 70rem;
+	align-self: center;
 }
 pre:not([class*="language-"]) {
 	margin: .5em 0;
@@ -198,12 +239,12 @@ pre:not([class*="language-"]) {
 	hyphens: none;
 	direction: ltr;
 	text-align: left;
-	white-space: pre-wrap;
 	word-spacing: normal;
 	word-break: normal;
 }
 code {
 	word-break: break-all;
+	font-size: var(--font-sm);
 }
 
 /* Header */
@@ -217,7 +258,6 @@ header {
 }
 .home-link {
 	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
 	font-weight: 700;
 }
 .home-link:link:not(:hover) {
@@ -311,3 +351,62 @@ header {
 	margin-right: 1em;
 }
 
+/* ============================================
+   CONTAINER QUERIES FOR LAYOUT ADAPTATION
+   ============================================ */
+
+   /* tablet: if the total of main is tablet size then make the smaller auto-fit columns */
+@container blogBody (min-width: 800px) {
+
+	img{
+		width: var(--img-medium);
+	}
+
+  code{
+		font-size: var(--font-md);
+	}
+
+	p{
+		margin: 3rem;
+		font-size: var(--font-lg);
+	}
+
+	a {
+		font-size: var(--font-lg);
+	}
+
+	h1{
+		font-size: var(--font-xxl);
+	}
+	h2{
+		font-size: var(--font-xl);
+	}
+}
+
+/* Desktop and larger: if the total of main is larger then make the large auto-fit columns */
+@container blogBody (min-width: 1600px) {
+
+	img{
+		width: var(--img-large);
+	}
+
+  code{
+		font-size: var(--font-lg);
+	}
+
+	p{
+		margin: 5rem;
+		font-size: var(--font-xl);
+	}
+
+	a {
+		font-size: var(--font-xl);
+	}
+
+	h1{
+		font-size: var(--font-xxxl);
+	}
+	h2{
+		font-size: var(--font-xxl);
+	}
+}
