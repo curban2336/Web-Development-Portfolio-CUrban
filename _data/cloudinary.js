@@ -13,6 +13,10 @@ export default {
   imgs: {
     'BossFight': { filename: 'BossFight', version: '1766025769' },
     'ShooterGameplay': { filename: 'ShooterGameplay', version: '1766025768' },
+		'Favicon': { filename: 'Favicon', version: '1766279030' },
+		'HeadShot': { filename: 'headshot', version: '1766279052' },
+		'FunShot': { filename: 'FunShot', version: '1766288968' },
+		'FunHelmetShot': { filename: 'FunHelmetShot', version: '1766287735' }
   },
 
   /**

@@ -6,5 +6,9 @@ const eleventyNavigation = {
 ---
 <h1>Archive</h1>
 
+<div>
+{% ImageGet "FunHelmetShot", "Picture of me in a red clone trooper helmet", 400 %}
+</div>
+
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}

@@ -5,6 +5,14 @@ date: 2025-05-13
 tags: ["JS", "Game Development", "Phaser"]
 ---
 
+Link to the site:
+<a href="https://sci-fi-shooter-curban2336.netlify.app/">https://sci-fi-shooter-curban2336.netlify.app/</a>
+
+Link to the repo:
+<a href="https://github.com/RVCC-IDMX/phaser-app-curban2336">https://github.com/RVCC-IDMX/phaser-app-curban2336</a>
+
+{% ImageGet "BossFight", "Screenshot of the Sci-Fi-Shooter Boss Fight", 400 %}
+
 Based on a Starfighter minigame from Kirby: Super Star Ultra, this science fiction shooter was built using Phaser, HTMl, JS, and a little CSS. Players start on a intro screen before moving to the game proper. The Game progressively grows harder after each boss fight until defeat. Going farther increases your high score which is saved by the system until the page is reloaded.
 
 Players control their ship using the up and down arrows and the spacebar to fire. Walls pass by the screen with one piece being green. When the green one hit it creates an opening that the player will be able to pass through. When the wall passes by, the pieces are re-randomized before being send back across the screen. Every five iterations a boss battleship appears to fight. Once the battleship is defeated, it speeds up the rest of the game. This continues with incremental speed increases until the player fails to hit the green piece of the wall and dies, or is killed by the battleship.
@@ -12,6 +20,8 @@ Players control their ship using the up and down arrows and the spacebar to fire
 ## Main Scene JS
 
 This JS shows the JavaScript used to create the walls, make the players and create the boss, keep score, set the controls, and increment the game speed/difficulty.
+
+<div class="code-block">
 
 ```diff-js
 import Phaser from 'phaser';
@@ -723,6 +733,8 @@ export default class MainScene extends Phaser.Scene {
 }
 ```
 
+</div>
+
 ## Gameplay Breakdown
 
 When the game boots up, players use the up and down arrow to move their ship on the screen. Sprite animation plays constantly on the ship while the background parallaxes to convey constant movement. The spacebar allows the player to shoot. This you already know, however: The projectile for the ship item pools. This means that the player can only fire when the current projectile either reaches the end of the screen or hits one of the moving walls.
@@ -730,5 +742,3 @@ When the game boots up, players use the up and down arrow to move their ship on 
 {% ImageGet "ShooterGameplay", "Screenshot of the Sci-Fi-Shooter Gameplay", 400 %}
 
 Every five walls that pass, a boss fight initiates. The boss shoots at the player and randomly moved up and down on the screen to attempt to avoid the player's attacks. When a boss is defeated, it resets the boss and increases it's health. After that, the next wave of five walls get progressively faster. This is all displayed and commented in the code block above.
-
-{% ImageGet "BossFight", "Screenshot of the Sci-Fi-Shooter Boss Fight", 400 %}

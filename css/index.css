@@ -1,3 +1,11 @@
+/* ==========================================================================
+	Site CSS Overview
+	- Mobile-first: default styles target <400px viewports.
+	- Nav alignment: centered by default; right-aligned at >=400px.
+	- Breakpoints: media queries at 400px and 800px; container queries at 800px and 1600px.
+	- Typography and spacing use CSS variables for consistent scaling.
+	- Images scale via container queries with max-width safeguards.
+	========================================================================== */
 /* Defaults */
 
 /* Font families */
@@ -24,8 +32,8 @@
 	--font-sm: 0.875rem; /* 14px /16 */
 	--font-md: 1rem; /* 16px /16 */
 	--font-lg: 1.125rem; /* 18px /16 */
-	--font-xl: 1.5rem; /* 24px /16 */
-	--font-xxl: 2rem; /* 32px /16 */
+	--font-xl: 1.8rem; /* 30px /16 */
+	--font-xxl: 2.5rem; /* 45px /16 */
 	--font-xxxl: 3rem; /* 48px /16 */
 }
 
@@ -33,7 +41,7 @@
 :root {
 	--img-small: 4rem;
 	--img-medium: 30rem;
-	--img-large: 60rem;
+	--img-large: 45rem;
 }
 
 /* Theme colors */
@@ -95,6 +103,7 @@ html {
 /* Image Styling */
 img{
   max-width: 100%;
+	border-radius: 0.5rem;
 }
 img[width][height] {
   height: auto;
@@ -126,6 +135,11 @@ p {
 
 li {
 	line-height: 1.5;
+}
+
+ol{
+	text-align: left;
+	font-size: var(--font-sm);
 }
 
 /* Links */
@@ -203,6 +217,8 @@ h2{
 	list-style: "";
 	border-top: 1px dashed var(--color-gray-20);
 	padding: 1em 0;
+	text-align: left;
+	font-size: var(--font-md);
 }
 .links-nextprev > * {
 	flex-grow: 1;
@@ -247,18 +263,36 @@ code {
 	font-size: var(--font-sm);
 }
 
-/* Header */
+/* Centered code block wrapper */
+.code-block {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.code-block pre {
+	margin: 0 auto;
+	width: 70rem;
+}
+
+/* Header (brand + navigation) */
+/* Mobile-first: center-align brand and nav; the home link spans full width.
+   At >=400px we switch to brand-left / nav-right using flex.
+*/
 header {
 	display: flex;
 	gap: 1em;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	padding: 1em;
 }
 .home-link {
 	flex-grow: 1;
 	font-weight: 700;
+	text-align: center;
+	order: -1;
+	flex-basis: 100%;
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
@@ -271,6 +305,8 @@ header {
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	align-content: center;
+	justify-content: center;
 }
 .nav-item {
 	display: inline-block;
@@ -280,6 +316,18 @@ header {
 }
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
+}
+
+/* Layout: align brand/nav to opposite ends >=400px */
+@media (min-width: 400px) {
+	header {
+		justify-content: space-between;
+	}
+	.home-link {
+		flex-basis: auto;
+		text-align: left;
+		order: 0;
+	}
 }
 
 /* Posts list */
@@ -311,9 +359,10 @@ header {
 }
 .postlist-date {
 	word-spacing: -0.5px;
+	flex-basis: 100%;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
+	font-size: var(--font-md); /* 16px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
@@ -324,6 +373,11 @@ header {
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
+}
+.postlist-description {
+  margin: 0.25rem 0 0.5rem;
+	font-size: var(--font-md);
+	flex-basis: 100%;
 }
 
 /* Tags */
@@ -352,18 +406,22 @@ header {
 }
 
 /* ============================================
-   CONTAINER QUERIES FOR LAYOUT ADAPTATION
-   ============================================ */
+	RESPONSIVE QUERIES (Container + Media)
+	- Container queries on `main` (`blogBody`) adapt typography and images.
+	- Media queries handle global header/nav alignment and font sizing.
+	============================================ */
 
    /* tablet: if the total of main is tablet size then make the smaller auto-fit columns */
 @container blogBody (min-width: 800px) {
 
 	img{
 		width: var(--img-medium);
+		max-width: 100%;           /* Never overflow container */
+    height: auto;              /* Maintain aspect ratio */
 	}
 
-  code{
-		font-size: var(--font-md);
+  ol, .postlist-link{
+		font-size: var(--font-lg);
 	}
 
 	p{
@@ -371,7 +429,7 @@ header {
 		font-size: var(--font-lg);
 	}
 
-	a {
+	p a[href]{
 		font-size: var(--font-lg);
 	}
 
@@ -380,6 +438,29 @@ header {
 	}
 	h2{
 		font-size: var(--font-xl);
+	}
+
+	.links-nextprev, .links-nextprev-next {
+		font-size: var(--font-lg);
+	}
+}
+
+@media (min-width: 800px) {
+	header a[href] {
+		font-size: var(--font-lg);
+	}
+
+	a.home-link{
+		text-align: left;
+	}
+
+	header {
+		justify-content: space-between;
+	}
+	.home-link {
+		flex-basis: auto;
+		text-align: left;
+		order: 0;
 	}
 }
 
@@ -388,10 +469,16 @@ header {
 
 	img{
 		width: var(--img-large);
+		max-width: 60rem;
 	}
 
-  code{
-		font-size: var(--font-lg);
+	div img{
+		width: var(--img-medium);
+		max-width: 50rem;
+	}
+
+  ol{
+		font-size: var(--font-xl);
 	}
 
 	p{
@@ -399,7 +486,7 @@ header {
 		font-size: var(--font-xl);
 	}
 
-	a {
+	p a[href]{
 		font-size: var(--font-xl);
 	}
 
@@ -408,5 +495,15 @@ header {
 	}
 	h2{
 		font-size: var(--font-xxl);
+	}
+
+	.links-nextprev, .links-nextprev-next, .links-nextprev a, .links-nextprev-next a {
+		font-size: var(--font-xl);
+	}
+}
+
+@media (min-width: 800px) {
+	header a[href] {
+		font-size: var(--font-xl);
 	}
 }
