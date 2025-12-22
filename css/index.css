@@ -275,6 +275,22 @@ code {
 	width: 70rem;
 }
 
+/* Responsive grid for grouped post images */
+.image-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.5rem;
+	margin: 2rem auto;
+	width: min(100%, 1100px);
+	justify-items: center;
+}
+
+.image-grid img {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+}
+
 /* Header (brand + navigation) */
 /* Mobile-first: center-align brand and nav; the home link spans full width.
    At >=400px we switch to brand-left / nav-right using flex.

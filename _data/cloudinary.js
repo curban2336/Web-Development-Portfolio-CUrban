@@ -16,7 +16,19 @@ export default {
 		'Favicon': { filename: 'Favicon', version: '1766279030' },
 		'HeadShot': { filename: 'headshot', version: '1766279052' },
 		'FunShot': { filename: 'FunShot', version: '1766288968' },
-		'FunHelmetShot': { filename: 'FunHelmetShot', version: '1766287735' }
+		'FunHelmetShot': { filename: 'FunHelmetShot', version: '1766287735' },
+		'ELVTR-Course': { filename: 'ELVTR-Course', version: '1766289156' },
+		'Hue': { filename: 'Hue', version: '1766364279' },
+		'Sepia': { filename: 'Sepia', version: '1766364279' },
+		'Twist': { filename: 'Twist', version: '1766364279' },
+		'Invert': { filename: 'Invert', version: '1766364279' },
+		'Blur': { filename: 'Blur', version: '1766364278' },
+		'Highlight': { filename: 'Highlight', version: '1766367991' },
+		'Motion': { filename: 'Motion', version: '1766369246' },
+		'Timing': { filename: 'Timing', version: '1766369246' },
+		'Desktop': { filename: 'Desktop', version: '1766372049' },
+		'Tablet': { filename: 'Tablet', version: '1766372048' },
+		'Phone': { filename: 'Phone', version: '1766372047' },
   },
 
   /**
