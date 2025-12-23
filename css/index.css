@@ -10,17 +10,17 @@
 
 /* Font families */
 @font-face {
-  font-family: 'Lora';
-  src: url('/fonts/Lora-Italic-VariableFont_wght.woff2') format('woff2');
-  font-weight: 200 1000;
-  font-display: swap;
+	font-family: 'Lora';
+	src: url('/fonts/Lora-Italic-VariableFont_wght.woff2') format('woff2');
+	font-weight: 200 1000;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: 'Playfair';
-  src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2') format('woff2');
-  font-weight: 200 1000;
-  font-display: swap;
+	font-family: 'Playfair';
+	src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2') format('woff2');
+	font-weight: 200 1000;
+	font-display: swap;
 }
 
 /* Font variables */
@@ -29,12 +29,18 @@
 	--font-family: 'Lora', -apple-system, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
 
-	--font-sm: 0.875rem; /* 14px /16 */
-	--font-md: 1rem; /* 16px /16 */
-	--font-lg: 1.125rem; /* 18px /16 */
-	--font-xl: 1.8rem; /* 30px /16 */
-	--font-xxl: 2.5rem; /* 45px /16 */
-	--font-xxxl: 3rem; /* 48px /16 */
+	--font-sm: 0.875rem;
+	/* 14px /16 */
+	--font-md: 1rem;
+	/* 16px /16 */
+	--font-lg: 1.125rem;
+	/* 18px /16 */
+	--font-xl: 1.8rem;
+	/* 30px /16 */
+	--font-xxl: 2.5rem;
+	/* 45px /16 */
+	--font-xxxl: 3rem;
+	/* 48px /16 */
 }
 
 /* Img variables */
@@ -83,8 +89,9 @@ body {
 	background-color: var(--background-color);
 	width: 100%;
 	display: grid;
-	text-align: center;
+	/* text-align: center; */
 }
+
 html {
 	overflow-y: scroll;
 }
@@ -101,17 +108,21 @@ html {
 }
 
 /* Image Styling */
-img{
-  max-width: 100%;
+img {
+	display: block;
+	margin-inline: auto;
+	max-width: 100%;
 	border-radius: 0.5rem;
 }
+
 img[width][height] {
-  height: auto;
+	height: auto;
 }
+
 img[src$=".svg"] {
-  width: 100%;
-  height: auto;
-  max-width: none;
+	width: 100%;
+	height: auto;
+	max-width: none;
 }
 
 /*video and iframe styling*/
@@ -120,6 +131,7 @@ iframe {
 	width: 100%;
 	height: auto;
 }
+
 iframe {
 	aspect-ratio: 16/9;
 }
@@ -128,18 +140,29 @@ iframe {
 p:last-child {
 	margin-bottom: 0;
 }
+
 p {
 	line-height: 1.5;
 	font-size: var(--font-sm);
+	max-width: 70ch;
+	margin-inline: auto;
+	text-align: left;
 }
 
 li {
 	line-height: 1.5;
 }
 
-ol{
+ol {
 	text-align: left;
 	font-size: var(--font-sm);
+	max-width: 70ch;
+	margin-inline: auto;
+}
+
+ul:not(.nav):not(.post-metadata):not(.postlist):not(.links-nextprev) {
+	max-width: 70ch;
+	margin-inline: auto;
 }
 
 /* Links */
@@ -147,9 +170,18 @@ a[href] {
 	color: var(--text-color-link);
 	font-size: var(--font-md);
 }
+
+/* Standalone links (not inside paragraphs) */
+main > a[href],
+main > heading-anchors > a[href] {
+	display: block;
+	text-align: center;
+}
+
 a[href]:visited {
 	color: var(--text-color-link-visited);
 }
+
 a[href]:hover,
 a[href]:active {
 	color: var(--text-color-link-active);
@@ -160,13 +192,14 @@ main,
 footer {
 	padding: 1rem;
 }
+
 main :first-child {
 	margin-top: 0;
 }
 
-main{
+main {
 	container-type: inline-size;
-  container-name: blogBody;
+	container-name: blogBody;
 }
 
 header {
@@ -174,19 +207,35 @@ header {
 	background-color: var(--nav-bar-background);
 }
 
-header a[href], header a[href]:visited {
+header a[href],
+header a[href]:visited {
 	color: var(--color-gray-20);
 }
 
-header, h1, h2, h3, h4, h5, h6 {
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: var(--font-family-title);
 }
 
-h1{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-align: center;
+}
+
+h1 {
 	font-size: var(--font-xl);
 }
 
-h2{
+h2 {
 	font-size: var(--font-lg);
 }
 
@@ -220,9 +269,11 @@ h2{
 	text-align: left;
 	font-size: var(--font-md);
 }
+
 .links-nextprev > * {
 	flex-grow: 1;
 }
+
 .links-nextprev-next {
 	text-align: right;
 }
@@ -231,6 +282,7 @@ h2{
 table {
 	margin: 1em 0;
 }
+
 table td,
 table th {
 	padding-right: 1em;
@@ -244,9 +296,11 @@ code {
 	max-width: 70rem;
 	align-self: center;
 }
+
 pre:not([class*="language-"]) {
 	margin: .5em 0;
-	line-height: 1.375; /* 22px /16 */
+	line-height: 1.375;
+	/* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
 	tab-size: var(--syntax-tab-size);
@@ -258,6 +312,7 @@ pre:not([class*="language-"]) {
 	word-spacing: normal;
 	word-break: normal;
 }
+
 code {
 	word-break: break-all;
 	font-size: var(--font-sm);
@@ -303,6 +358,7 @@ header {
 	align-items: center;
 	padding: 1em;
 }
+
 .home-link {
 	flex-grow: 1;
 	font-weight: 700;
@@ -310,6 +366,7 @@ header {
 	order: -1;
 	flex-basis: 100%;
 }
+
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
@@ -324,12 +381,15 @@ header {
 	align-content: center;
 	justify-content: center;
 }
+
 .nav-item {
 	display: inline-block;
 }
+
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
+
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
 }
@@ -339,6 +399,7 @@ header {
 	header {
 		justify-content: space-between;
 	}
+
 	.home-link {
 		flex-basis: auto;
 		text-align: left;
@@ -353,6 +414,7 @@ header {
 	padding: 0;
 	padding-left: 1.5rem;
 }
+
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
@@ -360,6 +422,7 @@ header {
 	counter-increment: start-from -1;
 	margin-bottom: 1em;
 }
+
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
@@ -368,17 +431,22 @@ header {
 	text-align: right;
 	margin-left: -1.5rem;
 }
+
 .postlist-date,
 .postlist-item:before {
-	font-size: 0.8125em; /* 13px /16 */
+	font-size: 0.8125em;
+	/* 13px /16 */
 	color: var(--color-gray-90);
 }
+
 .postlist-date {
 	word-spacing: -0.5px;
 	flex-basis: 100%;
 }
+
 .postlist-link {
-	font-size: var(--font-md); /* 16px /16 */
+	font-size: var(--font-md);
+	/* 16px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
@@ -387,13 +455,16 @@ header {
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
 }
+
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
+
 .postlist-description {
-  margin: 0.25rem 0 0.5rem;
+	margin: 0.25rem 0 0.5rem;
 	font-size: var(--font-md);
 	flex-basis: 100%;
+	max-width: 70ch;
 }
 
 /* Tags */
@@ -404,11 +475,18 @@ header {
 	text-transform: capitalize;
 	font-style: italic;
 }
+
 .postlist-item > .post-tag {
 	align-self: center;
 }
 
 /* Tags list */
+main nav {
+	display: block;
+	max-width: fit-content;
+	margin-inline: auto;
+}
+
 .post-metadata {
 	display: inline-flex;
 	flex-wrap: wrap;
@@ -417,8 +495,29 @@ header {
 	padding: 0;
 	margin: 0;
 }
+
 .post-metadata time {
 	margin-right: 1em;
+}
+
+/* Post links (site/repo) */
+.post-links {
+	display: flex;
+	justify-content: center;
+	gap: 1.5em;
+	margin-block: 1em;
+}
+
+.post-links a {
+	text-decoration: none;
+	padding: 0.5em 1em;
+	border: 1px solid var(--text-color-link);
+	border-radius: 0.25rem;
+}
+
+.post-links a:hover {
+	background-color: var(--text-color-link);
+	color: var(--background-color);
 }
 
 /* ============================================
@@ -427,36 +526,40 @@ header {
 	- Media queries handle global header/nav alignment and font sizing.
 	============================================ */
 
-   /* tablet: if the total of main is tablet size then make the smaller auto-fit columns */
+/* tablet: if the total of main is tablet size then make the smaller auto-fit columns */
 @container blogBody (min-width: 800px) {
 
-	img{
+	img {
 		width: var(--img-medium);
-		max-width: 100%;           /* Never overflow container */
-    height: auto;              /* Maintain aspect ratio */
+		max-width: 100%;
+		/* Never overflow container */
+		height: auto;
+		/* Maintain aspect ratio */
 	}
 
-  ol, .postlist-link{
+	ol,
+	.postlist-link {
 		font-size: var(--font-lg);
 	}
 
-	p{
-		margin: 3rem;
+	p {
 		font-size: var(--font-lg);
 	}
 
-	p a[href]{
+	p a[href] {
 		font-size: var(--font-lg);
 	}
 
-	h1{
+	h1 {
 		font-size: var(--font-xxl);
 	}
-	h2{
+
+	h2 {
 		font-size: var(--font-xl);
 	}
 
-	.links-nextprev, .links-nextprev-next {
+	.links-nextprev,
+	.links-nextprev-next {
 		font-size: var(--font-lg);
 	}
 }
@@ -466,13 +569,14 @@ header {
 		font-size: var(--font-lg);
 	}
 
-	a.home-link{
+	a.home-link {
 		text-align: left;
 	}
 
 	header {
 		justify-content: space-between;
 	}
+
 	.home-link {
 		flex-basis: auto;
 		text-align: left;
@@ -483,37 +587,41 @@ header {
 /* Desktop and larger: if the total of main is larger then make the large auto-fit columns */
 @container blogBody (min-width: 1600px) {
 
-	img{
+	img {
 		width: var(--img-large);
 		max-width: 60rem;
 	}
 
-	div img{
+	div img {
 		width: var(--img-medium);
 		max-width: 50rem;
 	}
 
-  ol{
+	ol {
 		font-size: var(--font-xl);
 	}
 
-	p{
-		margin: 5rem;
+	p {
+		margin-block: 5rem;
 		font-size: var(--font-xl);
 	}
 
-	p a[href]{
+	p a[href] {
 		font-size: var(--font-xl);
 	}
 
-	h1{
+	h1 {
 		font-size: var(--font-xxxl);
 	}
-	h2{
+
+	h2 {
 		font-size: var(--font-xxl);
 	}
 
-	.links-nextprev, .links-nextprev-next, .links-nextprev a, .links-nextprev-next a {
+	.links-nextprev,
+	.links-nextprev-next,
+	.links-nextprev a,
+	.links-nextprev-next a {
 		font-size: var(--font-xl);
 	}
 }
