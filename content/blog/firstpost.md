@@ -3,13 +3,9 @@ title: Web Based Video Game.
 description: This is a post on my Sci-Fi Shooter game built with Phaser.
 date: 2025-05-13
 tags: ["JS", "Game Development", "Phaser"]
+siteUrl: https://sci-fi-shooter-curban2336.netlify.app/
+repoUrl: https://github.com/RVCC-IDMX/phaser-app-curban2336
 ---
-
-Link to the site:
-<a href="https://sci-fi-shooter-curban2336.netlify.app/">https://sci-fi-shooter-curban2336.netlify.app/</a>
-
-Link to the repo:
-<a href="https://github.com/RVCC-IDMX/phaser-app-curban2336">https://github.com/RVCC-IDMX/phaser-app-curban2336</a>
 
 {% ImageGet "BossFight", "Screenshot of the Sci-Fi-Shooter Boss Fight", 400 %}
 

@@ -3,13 +3,9 @@ title: Poetry Website.
 description: This is a website utilizing multiple standard practices and features to display a Poem with style
 date: 2025-09-28
 tags: ["JS", "HTML", "CSS", "Web Development"]
+siteUrl: https://snowyevening-robertfrost.netlify.app/
+repoUrl: https://github.com/RVCC-IDMX/poetry-interpretation-curban2336
 ---
-
-Link to the site:
-<a href="https://snowyevening-robertfrost.netlify.app/">https://snowyevening-robertfrost.netlify.app/</a>
-
-Link to the repo:
-<a href="https://github.com/RVCC-IDMX/poetry-interpretation-curban2336">https://github.com/RVCC-IDMX/poetry-interpretation-curban2336</a>
 
 This poem was a little love letter to a Poem I really enjoy. That poem being Robert Frost's "Stopping by Woods on a Snowy Evening". It is a very rich and interprative piece that also happens to fit multiple differing themes. In the case of this website, I chose to focus on the winter aspect of it, making the colors and images reflect the snow and icy themes. This webpage has several self-sizing images as well as multiple pages giving interpretations of the work and the history of the poem. There is a line holder property of the poem, letting you highlight the line you are on. In addition I added a button that allows you to copy the poem onto your devices clipboard for pasting later!
 
