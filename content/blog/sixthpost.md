@@ -1,7 +1,7 @@
 ---
 title: VacationMapper Capstone
 description: This site uses Maptiler and Leaflet API to allow users to catalogue and connect locations along their vacation route. Users can also save up to three different routes using local storage caching.
-date: 2026-4-13
+date: 2026-04-13
 tags: ["CSS", "Layout", "Web Development", "API", "Full Pipeline"]
 ---
 
