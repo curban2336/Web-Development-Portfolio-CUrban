@@ -3,13 +3,9 @@ title: About Me
 description: A site dedicated to displaying my hobbies, profession, and a little blog about filter effects using CSS
 date: 2025-05-06
 tags: ["CSS", "HTML", "Web Development"]
+siteUrl: https://about-me-curban2336.netlify.app/
+repoUrl: https://github.com/RVCC-IDMX/about-me-curban2336
 ---
-
-Link to the site:
-<a href="https://about-me-curban2336.netlify.app/">https://about-me-curban2336.netlify.app/</a>
-
-Link to the repo:
-<a href="https://github.com/RVCC-IDMX/about-me-curban2336">https://github.com/RVCC-IDMX/about-me-curban2336</a>
 
 This website was constructed with the purpose of showing a wide array of skills both web development as well as my personal likes and hobbies. The website color-coordinates, scales appropriately with multiple screen sizes. I have a worked nav bar, and at smaller screen sizes that nav bar gets condensed into a hamburger pop-up menu. The most interesting part of the website comes from the form submission and the several overlay effects I demonstrate towards the bottom of the page.
 

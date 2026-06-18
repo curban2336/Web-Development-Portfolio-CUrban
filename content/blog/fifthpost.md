@@ -3,13 +3,9 @@ title: CSS Layout Experiment
 description: This site is used as an experiment in layout design, scaling all the container elements without using @media queries and accommodating for screens of any size(including super large screens).
 date: 2025-11-29
 tags: ["CSS", "Layout", "Web Development"]
+siteUrl: https://cookie-jar-layout-experiment.netlify.app/
+repoUrl: https://github.com/RVCC-IDMX/cookie-jar-curban2336
 ---
-
-Link to the site:
-<a href="https://cookie-jar-layout-experiment.netlify.app/">https://cookie-jar-layout-experiment.netlify.app/</a>
-
-Link to the repo:
-<a href="https://github.com/RVCC-IDMX/cookie-jar-curban2336">https://github.com/RVCC-IDMX/cookie-jar-curban2336</a>
 
 The Cookie Jar website, while it does offer several recipes for delicious cookies, is really a demonstration of Layout consistency regardless of screensize. This site has scaling variables and sizing clamps to make sure that the elements are sized appropriately regardless of whether the screen is 400px or 2300px. As an extra challenge, the entirety of the website is styled without using @media in any way. Instead, it uses a series of @container queries to check to specific container sizes in relation to the whole screen.
 

@@ -3,13 +3,9 @@ title: CSS Motion Guide.
 description: This site is built around demonstrating all the different ways you can perform motion in CSS.
 date: 2025-11-08
 tags: ["CSS", "Web Development"]
+siteUrl: https://css-motion-curban2336.netlify.app/
+repoUrl: https://github.com/RVCC-IDMX/css-motion-curban2336
 ---
-
-Link to the site:
-<a href="https://css-motion-curban2336.netlify.app/">https://css-motion-curban2336.netlify.app/</a>
-
-Link to the repo:
-<a href="https://github.com/RVCC-IDMX/css-motion-curban2336">https://github.com/RVCC-IDMX/css-motion-curban2336</a>
 
 {% ImageGet "Motion", "Screenshot of the CSS Motion Website", 400 %}
 
